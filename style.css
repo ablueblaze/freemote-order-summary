@@ -19,13 +19,13 @@ Core variables
 
   --clr-text-one: #2f463d;
   --clr-text-two: #467a66;
-  --clr-text-three: #4f9779;
+  --clr-text-three-close-btn: #4f9779;
   --clr-text-four: #7a8f85;
 
   --clr-light: #fff;
   --clr-accent-one: #46a67e;
   --clr-accent-two: #67bd99;
-  --clr-accent-three: #e9f2ec;
+  --clr-accent-three-close-btn: #e9f2ec;
   --clr-accent-four: #f0fff5;
 }
 
@@ -80,4 +80,69 @@ body {
   background-image: url('public/ZigZag-repeatable.png');
   background-position: center;
   background-repeat: repeat;
+}
+
+.container {
+  max-width: 1400px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*  
+############
+Card
+############
+*/
+
+.card {
+  position: relative;
+  min-width: 300px;
+  max-width: 460px;
+  min-height: 550px;
+  max-height: 750px;
+  background-color: var(--clr-light);
+  border-radius: 5px;
+}
+
+/*  
+############
+close button
+############
+*/
+
+.close {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  right: 10px;
+  top: 10px;
+  width: 32px;
+  height: 32px;
+  background-color: var(--clr-accent-three-close-btn);
+  border-radius: 50%;
+  transition: all ease 200ms;
+}
+.close:hover {
+  transition: all ease 200ms;
+  transform: scale(1.2);
+}
+.close:before,
+.close:after {
+  position: absolute;
+  left: 15px;
+  content: ' ';
+  background-color: var(--clr-text-three-close-btn);
+
+  /* Direct control of the size of the close button */
+  height: 23px;
+  width: 2px;
+}
+.close:before {
+  transform: rotate(45deg);
+}
+.close:after {
+  transform: rotate(-45deg);
 }
