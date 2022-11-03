@@ -1,0 +1,83 @@
+/*  
+############
+Core variables
+############
+*/
+:root {
+  /* --ff-primary: 'Open Sans', sans-serif; */
+  --ff-primary: 'Montserrat', sans-serif;
+  --ff-secondary: 'ubuntu', sans-serif;
+
+  --fw-reg: 400;
+  --fw-bold: 600;
+  --fw-extra-bold: 800;
+
+  --fs-h1: 3rem;
+  --fs-h2: 2.25rem;
+  --fs-h3: 1.25rem;
+  --fs-body: 1rem;
+
+  --clr-text-one: #2f463d;
+  --clr-text-two: #467a66;
+  --clr-text-three: #4f9779;
+  --clr-text-four: #7a8f85;
+
+  --clr-light: #fff;
+  --clr-accent-one: #46a67e;
+  --clr-accent-two: #67bd99;
+  --clr-accent-three: #e9f2ec;
+  --clr-accent-four: #f0fff5;
+}
+
+/*  
+############
+Basic style reset
+############
+*/
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+/*  
+############
+Separator Template
+############
+*/
+
+body {
+  font-family: var(--ff-primary);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-h3);
+  color: var(--clr-dark);
+  background-color: var(--clr-light);
+  background-image: url('public/ZigZag-repeatable.png');
+  background-position: center;
+  background-repeat: repeat;
+}
