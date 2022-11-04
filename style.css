@@ -32,10 +32,8 @@ Core variables
 
   --close-btn-size: 23px;
 
-  --card-height-max: 750px;
-  --card-height-min: 650px;
-  --card-width-max: 400px;
-  --card-width-min: 300px;
+  --card-height: 650px;
+  --card-width: 400px;
 
   --card-content-height: 550px;
 }
@@ -115,13 +113,11 @@ Card
   justify-content: center;
   align-items: center;
   position: relative;
-  min-width: var(--card-width-min);
-  max-width: var(--card-width-max);
-  min-height: var(--card-height-min);
-  max-height: var(--card-height-max);
+  width: var(--card-width);
+  height: var(--card-height);
   background-color: var(--clr-light);
   border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(34, 34, 34, 0.562);
+  box-shadow: 0 4px 10px #3d8a498f;
 }
 
 .card.active {
