@@ -12,21 +12,30 @@ Core variables
   --fw-bold: 600;
   --fw-extra-bold: 800;
 
-  --fs-h1: 3rem;
-  --fs-h2: 2.25rem;
-  --fs-h3: 1.25rem;
+  --fs-h2: 1.5rem;
+  --fs-h3: 1.2rem;
+  --fs-a: 1.1rem;
   --fs-body: 1rem;
 
-  --clr-text-one: #2f463d;
-  --clr-text-two: #467a66;
-  --clr-text-three-close-btn: #4f9779;
-  --clr-text-four: #7a8f85;
+  --clr-text-title: #2f463d;
+  --clr-text-p: #7a8f85;
+  --clr-text-a: #467a66;
+
+  --clr-x-close-btn: #4f9779;
+  --clr-bg-close-btn: #e9f2ec;
 
   --clr-light: #fff;
   --clr-accent-one: #46a67e;
-  --clr-accent-two: #67bd99;
-  --clr-accent-three-close-btn: #e9f2ec;
-  --clr-accent-four: #f0fff5;
+  --clr-accent-two: #9ad8be;
+
+  --clr-accent-item-bg: #f0fff5;
+
+  --close-btn-size: 23px;
+
+  --card-height-max: 750px;
+  --card-height-min: 600px;
+  --card-width-max: 400px;
+  --card-width-min: 300px;
 }
 
 /*  
@@ -97,13 +106,16 @@ Card
 */
 
 .card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
-  min-width: 300px;
-  max-width: 460px;
-  min-height: 550px;
-  max-height: 750px;
+  min-width: var(--card-width-min);
+  max-width: var(--card-width-max);
+  min-height: var(--card-height-min);
+  max-height: var(--card-height-max);
   background-color: var(--clr-light);
-  border-radius: 5px;
+  border-radius: 8px;
 }
 
 /*  
@@ -121,23 +133,23 @@ close button
   top: 10px;
   width: 32px;
   height: 32px;
-  background-color: var(--clr-accent-three-close-btn);
+  background-color: var(--clr-bg-close-btn);
   border-radius: 50%;
   transition: all ease 200ms;
 }
 .close:hover {
   transition: all ease 200ms;
-  transform: scale(1.2);
+  transform: scale(1.3);
 }
 .close:before,
 .close:after {
   position: absolute;
   left: 15px;
   content: ' ';
-  background-color: var(--clr-text-three-close-btn);
+  background-color: var(--clr-x-close-btn);
 
   /* Direct control of the size of the close button */
-  height: 23px;
+  height: var(--close-btn-size);
   width: 2px;
 }
 .close:before {
@@ -145,4 +157,136 @@ close button
 }
 .close:after {
   transform: rotate(-45deg);
+}
+
+/*  
+############
+Card content
+############
+*/
+
+.card_content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 85%;
+  height: 500px;
+}
+
+.card_image {
+  background-image: url('public/happy1.svg');
+  background-size: cover;
+  background-position: center;
+  width: 110px;
+  height: 110px;
+}
+
+h2 {
+  color: var(--clr-text-title);
+  font-size: var(--fs-h2);
+}
+
+p {
+  text-align: center;
+  color: var(--clr-text-four);
+  font-weight: var(--fw-reg);
+  font-size: var(--fs-body);
+}
+
+/*  
+############
+Item choice box
+############
+*/
+
+.item-choice-container {
+  width: 100%;
+  display: flex;
+  margin-top: 10px;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 5px;
+  background-color: var(--clr-accent-item-bg);
+}
+
+.item-image {
+  width: 70px;
+  height: 80px;
+  border-radius: 5px 0 0 5px;
+  background-image: url('public/Rectangle.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.name-price > h3 {
+  text-align: left;
+  color: var(--clr-text-title);
+  font-size: var(--fs-h3);
+}
+
+.name-price > p {
+  text-align: left;
+  color: var(--clr-text-p);
+  margin-top: 5px;
+  font-size: var(--fs-h3);
+}
+
+.item-choice-container > a {
+  margin-right: 10px;
+  font-size: var(--fs-a);
+  color: var(--clr-text-a);
+  transition: all ease 200ms;
+}
+
+.item-choice-container > a:hover {
+  transition: all ease 200ms;
+  transform: scale(1.1);
+  color: var(--clr-accent-one);
+}
+
+/*  
+############
+Navigation button
+############
+*/
+
+.next-btn {
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+  color: var(--clr-light);
+  background-color: var(--clr-accent-one);
+  padding: 15px 0;
+  border-radius: 5px;
+  box-shadow: 1px 3px 8px grey;
+  transition: all ease 200ms;
+}
+
+.next-btn:hover {
+  transition: all ease 200ms;
+  transform: scale(1.05);
+}
+
+.nav-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+li {
+  list-style: none;
+}
+
+.nav-dots > li {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: lightgrey;
+  margin: 0 5px;
+}
+
+.nav-dots > li.active {
+  background-color: var(--clr-accent-one);
 }
