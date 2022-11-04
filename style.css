@@ -33,9 +33,11 @@ Core variables
   --close-btn-size: 23px;
 
   --card-height-max: 750px;
-  --card-height-min: 600px;
+  --card-height-min: 650px;
   --card-width-max: 400px;
   --card-width-min: 300px;
+
+  --card-content-height: 550px;
 }
 
 /*  
@@ -89,6 +91,9 @@ body {
   background-image: url('public/ZigZag-repeatable.png');
   background-position: center;
   background-repeat: repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .container {
@@ -106,7 +111,7 @@ Card
 */
 
 .card {
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   position: relative;
@@ -116,6 +121,11 @@ Card
   max-height: var(--card-height-max);
   background-color: var(--clr-light);
   border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(34, 34, 34, 0.562);
+}
+
+.card.active {
+  display: flex;
 }
 
 /*  
@@ -170,12 +180,21 @@ Card content
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  width: 85%;
-  height: 500px;
+  width: 80%;
+  height: var(--card-content-height);
+}
+
+.card_image.choice {
+  background-image: url('public/hamburger1.png');
+}
+.card_image.confirmation {
+  background-image: url('public/happy1.svg');
+}
+.card_image.delivery {
+  background-image: url('public/delivery-man1.png');
 }
 
 .card_image {
-  background-image: url('public/happy1.svg');
   background-size: cover;
   background-position: center;
   width: 110px;
@@ -183,6 +202,8 @@ Card content
 }
 
 h2 {
+  text-align: center;
+  padding: 0 50px;
   color: var(--clr-text-title);
   font-size: var(--fs-h2);
 }
@@ -241,7 +262,7 @@ Item choice box
 
 .item-choice-container > a:hover {
   transition: all ease 200ms;
-  transform: scale(1.1);
+  text-decoration: none;
   color: var(--clr-accent-one);
 }
 
@@ -256,15 +277,20 @@ Navigation button
   text-align: center;
   text-decoration: none;
   color: var(--clr-light);
-  background-color: var(--clr-accent-one);
+  background-color: lightgrey;
   padding: 15px 0;
   border-radius: 5px;
-  box-shadow: 1px 3px 8px grey;
   transition: all ease 200ms;
+}
+
+.next-btn.active {
+  background-color: var(--clr-accent-one);
+  box-shadow: 1px 1px 4px grey;
 }
 
 .next-btn:hover {
   transition: all ease 200ms;
+  opacity: 0.8;
   transform: scale(1.05);
 }
 
@@ -289,4 +315,19 @@ li {
 
 .nav-dots > li.active {
   background-color: var(--clr-accent-one);
+}
+
+@media screen and (min-width: 1100px) {
+  .container {
+    justify-content: space-evenly;
+  }
+
+  .card {
+    display: flex;
+  }
+
+  .card.active {
+    z-index: 10;
+    transform: scale(1.2);
+  }
 }
