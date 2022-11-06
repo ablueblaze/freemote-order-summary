@@ -86,7 +86,7 @@ body {
   font-size: var(--fs-h3);
   color: var(--clr-dark);
   background-color: var(--clr-light);
-  background-image: url('public/ZigZag-repeatable.png');
+  background-image: url('ZigZag-repeatable.png');
   background-position: center;
   background-repeat: repeat;
   display: flex;
@@ -181,13 +181,13 @@ Card content
 }
 
 .card_image.choice {
-  background-image: url('public/hamburger1.png');
+  background-image: url('hamburger1.png');
 }
 .card_image.confirmation {
-  background-image: url('public/happy1.svg');
+  background-image: url('happy1.svg');
 }
 .card_image.delivery {
-  background-image: url('public/delivery-man1.png');
+  background-image: url('delivery-man1.png');
 }
 
 .card_image {
@@ -231,7 +231,7 @@ Item choice box
   width: 70px;
   height: 80px;
   border-radius: 5px 0 0 5px;
-  background-image: url('public/Rectangle.png');
+  background-image: url('Rectangle.png');
   background-size: cover;
   background-position: center;
 }
