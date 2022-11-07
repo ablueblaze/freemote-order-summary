@@ -4,19 +4,22 @@ Core variables
 ############
 */
 :root {
-  /* --ff-primary: 'Open Sans', sans-serif; */
+  /* font family: */
   --ff-primary: 'Montserrat', sans-serif;
   --ff-secondary: 'ubuntu', sans-serif;
 
+  /* font weight: */
   --fw-reg: 400;
   --fw-bold: 600;
   --fw-extra-bold: 800;
 
+  /* font size: */
   --fs-h2: 1.5rem;
   --fs-h3: 1.2rem;
   --fs-a: 1.1rem;
   --fs-body: 1rem;
 
+  /* Colors: */
   --clr-text-title: #2f463d;
   --clr-text-p: #7a8f85;
   --clr-text-a: #467a66;
@@ -30,6 +33,7 @@ Core variables
 
   --clr-accent-item-bg: #f0fff5;
 
+  /* Various: */
   --close-btn-size: 23px;
 
   --card-height: 650px;
