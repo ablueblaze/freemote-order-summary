@@ -3,6 +3,12 @@
 Core variables
 ############
 */
+
+/* Question:
+How do you use variables in shopify? 
+Sizing of the card on mobile?
+*/
+
 :root {
   /* --ff-primary: 'Open Sans', sans-serif; */
   --ff-primary: 'Montserrat', sans-serif;
@@ -97,6 +103,7 @@ body {
 .container {
   max-width: 1400px;
   height: 100%;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -176,7 +183,8 @@ Card content
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  width: 80%;
+  width: 100%;
+  padding: 0 40px;
   height: var(--card-content-height);
 }
 
@@ -312,6 +320,12 @@ li {
 .nav-dots > li.active {
   background-color: var(--clr-accent-one);
 }
+
+/*  
+############
+Large screens
+############
+*/
 
 @media screen and (min-width: 1100px) {
   .container {
